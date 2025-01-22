@@ -61,4 +61,101 @@
    У консоль також буде виведено інформацію про виявлені часті набори товарів і асоціативні правила.
 
 
+#ПРО ЛАБКУ
+
+---
+
+### 1. **Market Basket Analysis** (Аналіз ринкових кошиків)
+
+- **Objective**: To uncover associations and correlations between different items purchased in supermarkets or online platforms.  
+  (Мета: Виявити асоціації та кореляції між різними товарами, які купуються в супермаркетах чи онлайн-платформах.)
+
+- **Key Concept**: Association Rule Mining, specifically using the Apriori algorithm.  
+  (Основна концепція: Видобування асоціативних правил, зокрема, за допомогою алгоритму Apriori.)
+
+**Tools and Technologies**  
+(Інструменти та технології)
+
+- **Libraries**:  
+  (Бібліотеки:)
+  - **Python**: pandas for data manipulation, mlxtend for implementing Apriori.  
+    (Python: pandas для обробки даних, mlxtend для реалізації алгоритму Apriori.)
+  - **matplotlib or seaborn** for visualization.  
+    (matplotlib або seaborn для візуалізації.)
+
+**Dataset**  
+(Дані)
+
+- A typical dataset for this project is the Groceries dataset, which is a standard dataset used for market basket analysis. It contains a collection of transactions with each transaction listing all items purchased.  
+  (Типовий набір даних для цього проєкту — це набір даних "Groceries", який є стандартним для аналізу ринкових кошиків. Він містить набір транзакцій, де кожна транзакція перераховує всі придбані товари.)
+
+---
+
+### 2. **Tasks Breakdown** (Розподіл завдань)
+
+#### 1. **Data Preprocessing** (Попередня обробка даних)
+
+- **Loading Data**: Read the dataset into a suitable format for analysis.  
+  (Завантаження даних: Я прочитав набір даних і перетворив його у підходящий формат для аналізу.)
+
+- **Data Cleaning**: Handle missing values, if any.  
+  (Очищення даних: Я перевірив наявність пропущених значень у наборі даних і вивів відповідні повідомлення про це в консоль. Пропущених значень не було.)
+
+- **Data Transformation**: Convert the data into an appropriate format for the Apriori algorithm (e.g., one-hot encoding in Python).  
+  (Перетворення даних: Я застосував One-Hot Encoding до даних, щоб підготувати їх для алгоритму Apriori.)
+
+#### 2. **Exploratory Data Analysis (EDA)** (Попередній аналіз даних)
+
+- **Analyze the most common items and itemsets**.  
+  (Аналіз найпоширеніших товарів і наборів товарів: Я проаналізував найпоширеніші товари в даних за допомогою підрахунку їх частоти.)
+
+- **Visualize the frequency of top items/itemsets**.  
+  (Візуалізація частоти топ-товарів/наборів товарів: Я побудував бар-графік для візуалізації топ-10 найбільш популярних товарів.)
+
+#### 3. **Implementing Apriori Algorithm** (Реалізація алгоритму Apriori)
+
+- **Parameter Setting**: Set appropriate values for support, confidence, and lift.  
+  (Налаштування параметрів: Я налаштував значення для підтримки (`support`), довіри (`confidence`) та підйому (`lift`) відповідно до вимог.)
+
+- **Frequent Itemset Generation**: Use the Apriori algorithm to find frequent itemsets.  
+  (Генерація частих наборів товарів: Я використав алгоритм Apriori для знаходження частих наборів товарів з мінімальною підтримкою 0.003.)
+
+- **Rule Generation**: Generate association rules from these itemsets.  
+  (Генерація правил: Я згенерував асоціативні правила з частих наборів товарів, використовуючи довіру як метрику.)
+
+#### 4. **Analysis of Results** (Аналіз результатів)
+
+- **Interpretation**: Understand and interpret the rules generated. For example, if {bread, butter} -> {milk} is a rule, it implies that customers who buy bread and butter are likely to buy milk as well.  
+  (Інтерпретація: Я зрозумів і проаналізував згенеровані правила. Наприклад, правило `{хліб, масло} -> {молоко}` означає, що покупці, які купують хліб і масло, ймовірно, також куплять молоко.)
+
+- **Filtering Rules**: Filter out the most significant rules based on metrics like confidence and lift.  
+  (Фільтрація правил: Я фільтрував правила, залишаючи тільки ті, що мають високу довіру та підйом, зокрема, з `confidence > 0.2` та `lift > 1`.)
+
+#### 5. **Visualization** (Візуалізація)
+
+- **Create visual representations of the most important itemsets and rules** (e.g., using bar plots, network graphs).  
+  (Створення візуальних представлень найважливіших наборів товарів і правил: Я створив три інтерактивних графіки: для топ-10 товарів, для аналізу довіри та підйому, а також для розподілу довжини наборів товарів.)
+
+---
+
+### Як я виконав вимоги проєкту:
+
+1. **Попередня обробка даних**:
+   - Я завантажив набір даних і перевірив наявність пропущених значень. Після перевірки я переконався, що дані чисті, і не було необхідності їх очищати.
+   - Я застосував One-Hot Encoding для перетворення даних у формат, який підходить для алгоритму Apriori.
+
+2. **Попередній аналіз даних**:
+   - Я проаналізував найпоширеніші товари і побудував графік для візуалізації топ-10 найбільш популярних товарів, щоб отримати більше інформації про розподіл товарів.
+
+3. **Алгоритм Apriori**:
+   - Я налаштував параметри для підтримки, довіри та підйому.
+   - Використав алгоритм Apriori для знаходження частих наборів товарів і згенерував асоціативні правила.
+
+4. **Аналіз результатів**:
+   - Я інтерпретував правила асоціацій і відфільтрував найбільш значущі з них, засновані на метриках довіри та підйому.
+   
+5. **Візуалізація**:
+   - Я створив інтерактивні графіки за допомогою бібліотек **Plotly** та **Dash** для візуалізації результатів, включаючи графіки для топ-10 товарів, аналізу довіри та підйому, а також для розподілу довжини наборів товарів.
+
+---
 
